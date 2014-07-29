@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		845E6B811987DC5A00D3B08C /* ExplosionB.sks in Resources */ = {isa = PBXBuildFile; fileRef = 845E6B801987DC5A00D3B08C /* ExplosionB.sks */; };
 		8471CB3F1986741700C0E774 /* Explosion.sks in Resources */ = {isa = PBXBuildFile; fileRef = 8471CB3D1986741700C0E774 /* Explosion.sks */; };
 		8471CB401986741700C0E774 /* spark.png in Resources */ = {isa = PBXBuildFile; fileRef = 8471CB3E1986741700C0E774 /* spark.png */; };
 		8471CB421986767500C0E774 /* HudNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8471CB411986767500C0E774 /* HudNode.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		845E6B801987DC5A00D3B08C /* ExplosionB.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = ExplosionB.sks; sourceTree = "<group>"; };
 		8471CB3D1986741700C0E774 /* Explosion.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Explosion.sks; sourceTree = "<group>"; };
 		8471CB3E1986741700C0E774 /* spark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spark.png; sourceTree = "<group>"; };
 		8471CB411986767500C0E774 /* HudNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HudNode.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				8471CB3E1986741700C0E774 /* spark.png */,
 				8471CB411986767500C0E774 /* HudNode.swift */,
 				8471CB4319867F7C00C0E774 /* GameOverNode.swift */,
+				845E6B801987DC5A00D3B08C /* ExplosionB.sks */,
 			);
 			path = "Space Cat";
 			sourceTree = "<group>";
@@ -269,6 +272,7 @@
 			files = (
 				84B6ECA2198665A100565E28 /* Gameplay.mp3 in Resources */,
 				84A6888D19656CB3002486F8 /* Images.xcassets in Resources */,
+				845E6B811987DC5A00D3B08C /* ExplosionB.sks in Resources */,
 				84B6EC9D1986616300565E28 /* PressStart.caf in Resources */,
 				84B6EC9C1986616300565E28 /* Laser.caf in Resources */,
 				84A688A319657BD9002486F8 /* TitleScene.sks in Resources */,

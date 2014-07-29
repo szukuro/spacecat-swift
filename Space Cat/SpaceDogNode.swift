@@ -16,6 +16,7 @@ enum SpaceDogType : Int {
 
 class SpaceDogNode: SKSpriteNode {
     
+    var dogType : SpaceDogType?
     
     class func spaceDogOfType(type:SpaceDogType) -> SpaceDogNode {
         var spaceDog : SpaceDogNode
@@ -32,6 +33,9 @@ class SpaceDogNode: SKSpriteNode {
             spaceDog = SpaceDogNode()
             textures = []
         }
+        
+        spaceDog.dogType = type
+        spaceDog.name = "SpaceDog"
         
         let scale = Util.random(85, max: 100)
         let scalef = CGFloat(scale) / 100.0

@@ -12,7 +12,8 @@ let ProjectileSpeed : Int = 400
 let SpaceDogMinSpeed : Int = -100
 let SpaceDogMaxSpeed : Int = -50
 let MaxLives : Int = 4
-let PointsPerHit : Int = 100
+let PointsPerHitDogA : Int = 150
+let PointsPerHitDogB : Int = 100
 
 // See CollisionCategory.swift for NS_OPTIONS
 

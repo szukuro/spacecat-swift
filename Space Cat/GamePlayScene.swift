@@ -141,6 +141,19 @@ class GamePlayScene: SKScene {
         let gameOverNode = GameOverNode.gameOverAtPosition(CGPointMake(CGRectGetMidX(self.frame),
                                                                    CGRectGetMidY(self.frame)))
         self.addChild(gameOverNode)
+        
+        var nodesToRemove = Array<SKNode>()
+        
+        self.enumerateChildNodesWithName("SpaceDog", usingBlock: {
+            node, stop in
+                nodesToRemove.append(node) //cannot mutate while enumerating
+            })
+        
+        for node in nodesToRemove
+        {
+            node.removeFromParent()
+        }
+        
         self.restart = true
         self.gameOverDisplayed = true
         
@@ -173,6 +186,13 @@ class GamePlayScene: SKScene {
     func addSpaceDog() {
         let randomSpaceDog = Util.random(0, max: 2)
         let spaceDog = SpaceDogNode.spaceDogOfType(SpaceDogType.fromRaw(randomSpaceDog)!)
+        
+        var minSpeedModified = self.minSpeed
+        
+        if (randomSpaceDog == SpaceDogType.SpaceDogTypeA.toRaw()) {
+            minSpeedModified = minSpeedModified * 1.25
+        }
+        
         let dy = Util.random(self.minSpeed, max: SpaceDogMaxSpeed)
         let dyf = CGFloat(dy)
         
@@ -196,8 +216,20 @@ class GamePlayScene: SKScene {
         self.gameOver = hud.loseLife()
     }
     
-    func createDebrisAtPosition(position:CGPoint) {
-        let numberOfPieces = Util.random(5, max: 20)
+    func createDebrisAtPosition(position:CGPoint, dogType:SpaceDogType?) {
+        
+        var maxNumberOfPieces : Int = 0
+        var explosionName : String?
+        
+        if (dogType == SpaceDogType.SpaceDogTypeA) {
+            maxNumberOfPieces = 20
+            explosionName = "Explosion"
+        } else {
+            maxNumberOfPieces = 12
+            explosionName = "ExplosionB"
+        }
+        
+        let numberOfPieces = Util.random(5, max: maxNumberOfPieces)
         
         for var i = 0; i < numberOfPieces; ++i {
             let randomPiece = Util.random(1, max: 4)
@@ -223,7 +255,7 @@ class GamePlayScene: SKScene {
             debris.runAction(SKAction.waitForDuration(2), completion: { debris.removeFromParent() })
         }
         
-        let explosionPath = NSBundle.mainBundle().pathForResource("Explosion", ofType: "sks")
+        let explosionPath = NSBundle.mainBundle().pathForResource(explosionName, ofType: "sks")
         
         let explosion = NSKeyedUnarchiver.unarchiveObjectWithFile(explosionPath) as SKEmitterNode
         
@@ -247,13 +279,24 @@ extension GamePlayScene : SKPhysicsContactDelegate {
             secondBody = contact.bodyA
         }
         
+        var dogType : SpaceDogType?
+        
         if (firstBody.categoryBitMask == CollisionCategory.CollisionCategoryEnemy.value &&
                 secondBody.categoryBitMask == CollisionCategory.CollisionCategoryProjectile.value) {
             if let spaceDog = firstBody.node as? SpaceDogNode {
             
                 let projectile = secondBody.node as ProjectileNode
                 
-                self.addPoints(PointsPerHit)
+                dogType = spaceDog.dogType
+                
+                var points : Int = 0
+                if (dogType == SpaceDogType.SpaceDogTypeA) {
+                    points = PointsPerHitDogA
+                } else {
+                    points = PointsPerHitDogB
+                }
+                
+                self.addPoints(points)
                 
                 self.runAction(self.explodeSFX)
             
@@ -273,12 +316,15 @@ extension GamePlayScene : SKPhysicsContactDelegate {
             self.runAction(self.damageSFX)
             
             let spaceDog = firstBody.node as SpaceDogNode
+            
+            dogType = spaceDog.dogType
+            
             spaceDog.removeFromParent()
 
             self.loseLife()
         }
         
-        self.createDebrisAtPosition(contact.contactPoint)
+        self.createDebrisAtPosition(contact.contactPoint, dogType:dogType)
     }
 
 }
