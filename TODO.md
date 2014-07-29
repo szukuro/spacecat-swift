@@ -24,9 +24,9 @@ Advanced features that would make a more compelling experience, but require lot 
 * Push notifications: ain't nothing like nagging the user to come and play :)
 * Projectile throttling: currently spamming taps is a viable strategy, should be reworked. Enemy spawn rate should be adjusted obviously
 * Powerup system: extra lives etc. Powerups should fall down just like enemies. List of possible powerups:
-..* 1up
-..* 2x shooting speed for 10 seconds
-..* freeze enemies and stop new spawns for 5 seconds
-..* invulnerability for 5 seconds (dogs hitting ground still die but don't cost lives)
+    * 1up
+    * 2x shooting speed for 10 seconds
+    * freeze enemies and stop new spawns for 5 seconds
+    * invulnerability for 5 seconds (dogs hitting ground still die but don't cost lives)
 * New music: admittedly I'm not a big fan of the music, it's not bad, but too repetitive. Should be able to compose something more diverse in Garageband from different loops
 * iPad version: don't see this happening but gonna make note of it anyway :)
