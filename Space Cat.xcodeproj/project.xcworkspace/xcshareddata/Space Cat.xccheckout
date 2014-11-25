@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>0A691504-7013-43A3-80A2-50BC238684CF</string>
+	<key>IDESourceControlProjectName</key>
+	<string>Space Cat</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>75851A4991690DEA8F24B3A2286B140678483A8E</key>
+		<string>github.com:szukuro/spacecat-swift.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>Space Cat.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>75851A4991690DEA8F24B3A2286B140678483A8E</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>github.com:szukuro/spacecat-swift.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>75851A4991690DEA8F24B3A2286B140678483A8E</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>75851A4991690DEA8F24B3A2286B140678483A8E</string>
+			<key>IDESourceControlWCCName</key>
+			<string>Space%20Cat</string>
+		</dict>
+	</array>
+</dict>
+</plist>

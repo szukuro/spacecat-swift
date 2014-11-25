@@ -24,7 +24,7 @@ class SpaceCatNode: SKSpriteNode {
     }
     
     var getTapAction : SKAction! {
-        if (!tapAction)
+        if (tapAction != nil)
         {
             let texture1 = SKTexture(imageNamed:"spacecat_2")
             let texture2 = SKTexture(imageNamed:"spacecat_1")

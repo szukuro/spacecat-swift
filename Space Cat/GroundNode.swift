@@ -22,12 +22,11 @@ class GroundNode: SKSpriteNode {
     
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
-        self.physicsBody.affectedByGravity = false
-        self.physicsBody.dynamic = false
+        self.physicsBody!.affectedByGravity = false
+        self.physicsBody!.dynamic = false
         
-        self.physicsBody.categoryBitMask = CollisionCategory.CollisionCategoryGround.value
-        self.physicsBody.collisionBitMask = CollisionCategory.CollisionCategoryDebris.value
-        self.physicsBody.contactTestBitMask = CollisionCategory.CollisionCategoryEnemy.value
-
+        self.physicsBody!.categoryBitMask = CollisionCategory.CollisionCategoryGround.rawValue
+        self.physicsBody!.collisionBitMask = CollisionCategory.CollisionCategoryDebris.rawValue
+        self.physicsBody!.contactTestBitMask = CollisionCategory.CollisionCategoryEnemy.rawValue
     }
 }

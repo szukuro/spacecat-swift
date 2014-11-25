@@ -17,7 +17,7 @@ class HudNode: SKNode {
 
 extension HudNode {
     class func hudAtPosition(position:CGPoint, frame:CGRect) -> HudNode {
-        let hud = self.node() as HudNode
+        let hud = HudNode()
         hud.position = position
         hud.zPosition = 10
         hud.name = "HUD"
@@ -35,7 +35,7 @@ extension HudNode {
             
             hud.addChild(lifeBar)
             
-            if (lastLifeBar) {
+            if (lastLifeBar != nil) {
                 lifeBar.position = CGPointMake(lastLifeBar!.position.x + 10, lastLifeBar!.position.y)
             }
             else {
@@ -55,6 +55,13 @@ extension HudNode {
         
         hud.addChild(scoreLabel)
         
+        
+        let muteButton = SKSpriteNode(imageNamed: "HUD_cat_1")
+        muteButton.name = "Mute"
+        muteButton.position = CGPointMake(frame.size.width - 25, frame.size.height * -1  + 45)
+        
+        hud.addChild(muteButton)
+        
         return hud
     }
     
@@ -69,7 +76,7 @@ extension HudNode {
         if (self.lives > 0) {
             let lifeNodeName = "Life\(self.lives)"
             let lifeToRemove = self.childNodeWithName(lifeNodeName)
-            lifeToRemove.removeFromParent()
+            lifeToRemove!.removeFromParent()
             self.lives--
         }
         

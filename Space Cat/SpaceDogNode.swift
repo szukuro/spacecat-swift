@@ -56,11 +56,11 @@ class SpaceDogNode: SKSpriteNode {
     
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
-        self.physicsBody.affectedByGravity = false
+        self.physicsBody!.affectedByGravity = false
         
-        self.physicsBody.categoryBitMask = CollisionCategory.CollisionCategoryEnemy.value
-        self.physicsBody.collisionBitMask = 0
-        self.physicsBody.contactTestBitMask = CollisionCategory.CollisionCategoryGround.value
-            | CollisionCategory.CollisionCategoryProjectile.value
+        self.physicsBody!.categoryBitMask = CollisionCategory.CollisionCategoryEnemy.rawValue
+        self.physicsBody!.collisionBitMask = 0
+        self.physicsBody!.contactTestBitMask = CollisionCategory.CollisionCategoryGround.rawValue
+            | CollisionCategory.CollisionCategoryProjectile.rawValue
     }
 }

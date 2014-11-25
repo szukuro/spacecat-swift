@@ -10,7 +10,7 @@ A Swift version of the Treehouse course app SpaceCat, extended with new, custom 
 * ~~More differentiation between enemies: The dog in the spaceship should be able to move faster than the other one (makes sense!), but should also award more points for this reason. Both should be modified by about 20%~~
 * ~~Continuing on that, the spaceship dog should produce a bigger explosion as well as more debris, or rather the other dog should have less of both compared to current~~
 * About screen, or rather a scrollable/-ing sidebar
-* Add mute button to homescreen
+* ~~Add mute button to gamescreen~~
 * ~~Clear remaining space dogs on game over, no need to have them around~~
 * Possible performance enhancements: the App Store version lags at later stages on an iPhone 5 even
 * GamePlayScene.swift is too large should be refactores or at least split into shorter logical parts using extensions 

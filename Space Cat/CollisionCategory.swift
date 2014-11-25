@@ -10,7 +10,7 @@ import UIKit
 
 //via http://natecook.com/blog/2014/07/swift-options-bitmask_generator/
 
-struct CollisionCategory : RawOptionSet {
+/*struct CollisionCategory : RawOptionSetType {
     var value: UInt32 = 0
     init(_ value: UInt32) { self.value = value }
     func toRaw() -> UInt32 { return self.value }
@@ -24,4 +24,12 @@ struct CollisionCategory : RawOptionSet {
     static var CollisionCategoryDebris: CollisionCategory { return CollisionCategory(1 << 2) }
     static var CollisionCategoryGround: CollisionCategory { return CollisionCategory(1 << 3) }
 }
-func == (lhs: CollisionCategory, rhs: CollisionCategory) -> Bool { return lhs.value == rhs.value }
+func == (lhs: CollisionCategory, rhs: CollisionCategory) -> Bool { return lhs.value == rhs.value }*/
+
+
+enum CollisionCategory : UInt32 {
+    case CollisionCategoryEnemy = 1,
+    CollisionCategoryProjectile = 2,
+    CollisionCategoryDebris = 4,
+    CollisionCategoryGround = 8
+}

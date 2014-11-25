@@ -26,11 +26,11 @@ class ProjectileNode: SKSpriteNode {
     
     func setupPhysicsBody() {
         self.physicsBody = SKPhysicsBody(rectangleOfSize: self.frame.size)
-        self.physicsBody.affectedByGravity = false
+        self.physicsBody!.affectedByGravity = false
         
-        self.physicsBody.categoryBitMask = CollisionCategory.CollisionCategoryProjectile.value
-        self.physicsBody.collisionBitMask = 0
-        self.physicsBody.contactTestBitMask = CollisionCategory.CollisionCategoryEnemy.value
+        self.physicsBody!.categoryBitMask = CollisionCategory.CollisionCategoryProjectile.rawValue
+        self.physicsBody!.collisionBitMask = 0
+        self.physicsBody!.contactTestBitMask = CollisionCategory.CollisionCategoryEnemy.rawValue
     }
 
     func setupAnimation() {
@@ -54,7 +54,7 @@ class ProjectileNode: SKSpriteNode {
         }
         else
         {
-            offscreenX = self.parent.frame.size.width + 10
+            offscreenX = self.parent!.frame.size.width + 10
         }
         
         let offscreenY = slope * offscreenX - slope * self.position.x + self.position.y

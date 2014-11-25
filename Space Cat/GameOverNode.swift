@@ -12,7 +12,7 @@ import SpriteKit
 class GameOverNode: SKNode {
    
     class func gameOverAtPosition(position:CGPoint) -> GameOverNode {
-        let gameOver = self.node()
+        let gameOver = GameOverNode()
         
         let gameOverLabel = SKLabelNode(fontNamed: "Futura-CondensedExtraBold")
         gameOverLabel.name = "GameOver"

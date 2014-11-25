@@ -37,13 +37,13 @@ class TitleScene: SKScene {
         self.backgroundMusic!.play()
     }
     
-    override func touchesBegan(touches: NSSet!, withEvent event: UIEvent!) {
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
         if let scene = GamePlayScene.unarchiveFromFile("GamePlayScene") as? GamePlayScene
         {
             runAction(self.pressStartSFX)
             self.backgroundMusic?.stop()
             
-            let skView = self.view as SKView
+            let skView = self.view! as SKView
             let transition = SKTransition.fadeWithDuration(1)
             skView.presentScene(scene, transition:transition)
 
